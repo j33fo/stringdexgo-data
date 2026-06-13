@@ -1,75 +1,181 @@
-	
-version	3
-strings	
-0	
-id	"perfect_ivs"
-category	"IVs"
-translations	
-en	
-title	"Perfect IVs (Hundos)"
-description	"Finds all 100% IV (perfect) Pokémon."
-query	"4*"
-1	
-id	"zero_ivs"
-category	"IVs"
-translations	
-en	
-title	"Zero IVs (Nundos)"
-description	"Finds all 0% IV Pokémon."
-query	"0*"
-2	
-id	"three_star"
-category	"IVs"
-translations	
-en	
-title	"3-Star IVs"
-description	"Finds Pokémon with 3-star appraisals."
-query	"3*"
-3	
-id	"pvp_potential"
-category	"Battle"
-translations	
-en	
-title	"PvP Candidates"
-description	"Finds Pokémon often used in PvP (great/ultra league)."
-query	"cp-1500,cp-2500"
-4	
-id	"defenders"
-category	"Gyms"
-translations	
-en	
-title	"Gym Defenders"
-description	"Finds strong gym defenders (e.g., Blissey, Snorlax)."
-query	"defender"
-5	
-id	"legendary"
-category	"Type"
-translations	
-en	
-title	"Legendary"
-description	"Finds all Legendary Pokémon."
-query	"legendary"
-6	
-id	"shiny"
-category	"General"
-translations	
-en	
-title	"Shiny"
-description	"Finds all Shiny Pokémon."
-query	"shiny"
-7	
-id	"deletable"
-category	"Management"
-translations	
-en	
-title	"Deletable (Low IV)"
-description	"Finds Pokémon with 0-1 star IVs (careful when deleting)."
-query	"0*,1*"
-8	
-id	"evolvable"
-category	"Management"
-translations	
-en	
-title	"Evolvable"
-description	"Finds Pokémon that can be evolved."
-query	"evolve"
+{
+  "version": 3,
+  "strings": [
+    {
+      "id": "perfect_ivs",
+      "category": "IVs",
+      "translations": {
+        "en": {
+          "title": "Perfect IVs (Hundos)",
+          "description": "Finds all 100% IV (perfect) Pokémon in your storage.",
+          "query": "4*"
+        }
+      }
+    },
+    {
+      "id": "high_potential",
+      "category": "IVs",
+      "translations": {
+        "en": {
+          "title": "High Potential (High CP & IV)",
+          "description": "Finds 3-4 star Pokémon with 2500+ CP, ready for high-level raids or Master League.",
+          "query": "3*,4* & cp2500-"
+        }
+      }
+    },
+    {
+      "id": "investment_projects",
+      "category": "IVs",
+      "translations": {
+        "en": {
+          "title": "Investment Projects",
+          "description": "Finds high IV (3-4 star) but low CP Pokémon that are worth powering up.",
+          "query": "3*,4* & cp-1500"
+        }
+      }
+    },
+    {
+      "id": "pvp_ideal_ivs",
+      "category": "PvP",
+      "translations": {
+        "en": {
+          "title": "Ideal PvP IVs (Great/Ultra)",
+          "description": "Finds low attack/high defense stats optimized for CP-capped leagues.",
+          "query": "0-1attack & 3-4defense & 3-4hp"
+        }
+      }
+    },
+    {
+      "id": "purify_for_hundo",
+      "category": "IVs",
+      "translations": {
+        "en": {
+          "title": "Purify for Hundo",
+          "description": "Finds Shadow Pokémon that will become 100% IV specimens when purified.",
+          "query": "shadow & 13-15attack & 13-15defense & 13-15hp"
+        }
+      }
+    },
+    {
+      "id": "inventory_cleanup",
+      "category": "Utility",
+      "translations": {
+        "en": {
+          "title": "Inventory Clean-up (Trash)",
+          "description": "Finds safe-to-transfer Pokémon (non-shiny, non-perfect, non-legendary, etc.).",
+          "query": "!shiny & !4* & !3* & !legendary & !costume & !favorite & !@special"
+        }
+      }
+    },
+    {
+      "id": "recent_catches",
+      "category": "Utility",
+      "translations": {
+        "en": {
+          "title": "Caught Recently (3 Days)",
+          "description": "Filters Pokémon caught in the last 3 days.",
+          "query": "age0-2"
+        }
+      }
+    },
+    {
+      "id": "xp_grinding",
+      "category": "Utility",
+      "translations": {
+        "en": {
+          "title": "XP Grinding (Evolve)",
+          "description": "Pokémon ready to evolve that do not require special items.",
+          "query": "evolve & !item"
+        }
+      }
+    },
+    {
+      "id": "trade_evolutions",
+      "category": "Utility",
+      "translations": {
+        "en": {
+          "title": "Trade Evolutions",
+          "description": "Pokémon that cost 0 candy to evolve after being traded.",
+          "query": "tradeevolve"
+        }
+      }
+    },
+    {
+      "id": "distance_trading",
+      "category": "Utility",
+      "translations": {
+        "en": {
+          "title": "Distance Trades (100km+)",
+          "description": "Filters Pokémon for bonus Candy and XL Candy when traded.",
+          "query": "distance100-"
+        }
+      }
+    },
+    {
+      "id": "buddy_1km",
+      "category": "Utility",
+      "translations": {
+        "en": {
+          "title": "1km Buddy Search",
+          "description": "Finds Pokémon with the shortest buddy walking distance (1km).",
+          "query": "Magikarp,Wailmer,Pikachu,Geodude,Aron,Swablu,Caterpie,Weedle,Pidgey,Bunnelby,Fletchling"
+        }
+      }
+    },
+    {
+      "id": "xl_evolution_ready",
+      "category": "Utility",
+      "translations": {
+        "en": {
+          "title": "XL Evolution Ready",
+          "description": "Finds Pokémon you have enough XL candy to fully power up/evolve.",
+          "query": "countcandyxl296-"
+        }
+      }
+    },
+    {
+      "id": "gym_anti_fighting",
+      "category": "Gym",
+      "translations": {
+        "en": {
+          "title": "The Anti-Fighting Sandwich",
+          "description": "Top tier defenders that counter common Fighting-type gym attackers.",
+          "query": "togekiss,gardevoir,sylveon,metagross,drifblim,milotic & 3*,4*"
+        }
+      }
+    },
+    {
+      "id": "gym_golden_razz",
+      "category": "Gym",
+      "translations": {
+        "en": {
+          "title": "The Golden Razz Wall",
+          "description": "The best 'walls' to use when actively defending with Golden Razz Berries.",
+          "query": "blissey,chansey,snorlax,wobbuffet"
+        }
+      }
+    },
+    {
+      "id": "gym_top_tier_find",
+      "category": "Gym",
+      "translations": {
+        "en": {
+          "title": "Quick Find All Top Tier",
+          "description": "Quickly locates your strongest gym defenders with 2000+ CP.",
+          "query": "blissey,chansey,snorlax,togekiss,metagross,milotic,wobbuffet,slaking & cp2000-"
+        }
+      }
+    },
+    {
+      "id": "mega_evolve_ready",
+      "category": "Utility",
+      "translations": {
+        "en": {
+          "title": "Mega Evolve Ready",
+          "description": "Filters Pokémon that currently have enough Mega Energy to evolve.",
+          "query": "megaevolve"
+        }
+      }
+    }
+  ]
+}
